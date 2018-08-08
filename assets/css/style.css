@@ -1,0 +1,13 @@
+.jumbotron{
+    text-align: center;
+    background-color: #000000;
+    color: whitesmoke;
+}
+
+.charles{
+    opacity: .5;
+}
+
+.table{
+    margin: 10px, 20px;
+}
