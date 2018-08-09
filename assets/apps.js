@@ -18,3 +18,9 @@
   firebase.initializeApp(config);
   
   var database = firebase.database();
+
+  // I need the math thing for sure
+  // train name, destination, and frequency will be constants
+  //submit button will need s click function where val()'s will be sent to the database and also display them in the html 
+  // variables for everything 
+  
