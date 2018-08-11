@@ -28,17 +28,15 @@ $("button").on("click", function (event) {
   var firstTrain = $("#firstTrain").val().trim();
   var freq = $("#frequency").val().trim();
 
-  // Push train values(user inputs) to database
-  database.ref().push(trainName);
-  database.ref().push(destiny);
-  database.ref().push(firstTrain);
-  database.ref().push(freq);
+  var newTrainObj = {
+    trainName: trainName,
+    destiny: destiny,
+    firstTrain: firstTrain,
+    freq: freq
+  }
 
-  // Console.log train values 
-  console.log(trainName);
-  console.log(destiny);
-  console.log(firstTrain);
-  console.log(freq);
+  // Push train values(user inputs) to database
+  database.ref().push(newTrainObj);
 
   // clear values of train inputs 
   $("#trainName").val("");
@@ -46,7 +44,9 @@ $("button").on("click", function (event) {
   $("#firstTrain").val("");
   $("#frequency").val("");
 });
-
+database.ref().on("child_added", function(childSnapshot) {
+  console.log(childSnapshot.val());
+});
 // I'll need some moments js action for when the next train will arrive
 // train name, destination, and frequency will be constants
 //submit button will need s click function where val()'s will be sent to the database and also display them in the html 
