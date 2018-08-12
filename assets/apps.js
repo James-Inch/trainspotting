@@ -60,6 +60,16 @@ database.ref().on("child_added", function(childSnapshot) {
   console.log(freq);
 
 
+  var newTrain = $("<tr>").append(
+    $("<td>").text(trainName),
+    $("<td>").text(destiny),
+    $("<td>").text(firstTrain),
+    $("<td>").text(freq),
+  );
+  
+  // appends new table row with table data to train table 
+  $("#trainTable > tbody").append(newTrain);
+
 });
 // I'll need some moments js action for when the next train will arrive
 // train name, destination, and frequency will be constants
