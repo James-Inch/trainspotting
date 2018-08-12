@@ -46,6 +46,20 @@ $("button").on("click", function (event) {
 });
 database.ref().on("child_added", function(childSnapshot) {
   console.log(childSnapshot.val());
+
+  // create local variables to hold the values from the snapshot 
+  var trainName = childSnapshot.val().trainName;
+  var destiny = childSnapshot.val().destiny;
+  var firstTrain = childSnapshot.val().firstTrain;
+  var freq = childSnapshot.val().freq;
+
+  // console.log snapshot vars vals 
+  console.log(trainName);
+  console.log(destiny);
+  console.log(firstTrain);
+  console.log(freq);
+
+
 });
 // I'll need some moments js action for when the next train will arrive
 // train name, destination, and frequency will be constants
