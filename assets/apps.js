@@ -44,7 +44,7 @@ $("button").on("click", function (event) {
   $("#firstTrain").val("");
   $("#frequency").val("");
 });
-database.ref().on("child_added", function(childSnapshot) {
+database.ref().on("child_added", function (childSnapshot) {
   console.log(childSnapshot.val());
 
   // create local variables to hold the values from the snapshot 
@@ -63,22 +63,23 @@ database.ref().on("child_added", function(childSnapshot) {
   var newTrain = $("<tr>").append(
     $("<td>").text(trainName),
     $("<td>").text(destiny),
-    $("<td>").text(firstTrain),
     $("<td>").text(freq),
+    $("<td>").text(firstTrain),
   );
 
   // appends new table row with table data to train table 
   $("#trainTable > tbody").append(newTrain);
 
 });
- 
-var myVar = setInterval(myTimer, 1000); 
-  
-function myTimer() { 
-  var a = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+  var a = moment().format('MMMM Do YYYY, HH:mm:ss');
   $("h2").text(a);
 };
 // I'll need some moments js action for when the next train will arrive
 // train name, destination, and frequency will be constants
 //submit button will need s click function where val()'s will be sent to the database and also display them in the html 
 // variables for everything 
+
